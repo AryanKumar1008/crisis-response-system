@@ -62,3 +62,6 @@ Client runs on `http://localhost:5173`
 
 - **Guest** — Can trigger panic, request blood, register as donor
 - **Staff** — Can view dashboard, update incident status, view blood matches
+
+# crisis-response-system
+Real-time hospitality crisis response system with panic alerts, staff coordination dashboard, and emergency blood donor matching.
