@@ -1,67 +1,147 @@
-# 🚨 Hospitality Crisis Response System
+# 🚨 Crisis Response System
 
-**Emergency Crisis Management + Blood Matching for Hotels & Hospitality**
+A full-stack web application designed to handle emergency alerts and crisis management in real-time. Built with a modern frontend and scalable cloud backend.
 
-## Features
+---
 
-- **Panic Button** — Guests can trigger emergency alerts instantly
-- **Staff Dashboard** — Real-time crisis monitoring and response
-- **Incident Tracking** — Live status updates for all active incidents
-- **Blood Emergency Module** — Request blood by type/location, match nearby donors
-- **Role System** — Guest and Staff views with appropriate access
+## 🌐 Live Demo
 
-## Tech Stack
+* Frontend (Firebase Hosting):
+  https://crisis-response-aryan-12-81773.web.app
 
-| Layer    | Technology         |
-|----------|--------------------|
-| Frontend | React + Vite       |
-| Backend  | Node.js + Express  |
-| Database | In-memory store    |
-| Styling  | Custom CSS         |
+* Backend (Google Cloud Run):
+  https://crisis-backend-58557604639.asia-south1.run.app
 
-## Quick Start
+---
 
-### 1. Start the Backend
+## ⚙️ Tech Stack
 
-```bash
-cd server
-npm install
-npm run dev
+### Frontend
+
+* React (Vite)
+* JavaScript (ES6)
+* CSS
+
+### Backend
+
+* Node.js
+* Express.js
+
+### Cloud & Deployment
+
+* Firebase Hosting (Frontend)
+* Google Cloud Run (Backend)
+* GitHub Actions (CI/CD)
+
+---
+
+## 🚀 Features
+
+* 🔴 Emergency Panic Button
+* 🏥 Blood Request System
+* 📡 Real-time Alert Handling
+* 👥 Role-based UI (Guest / Staff)
+* ☁️ Cloud deployed backend
+* 🔄 Auto deployment using CI/CD
+
+---
+
+## 🧩 Project Structure
+
+```
+crisis/
+├── client/   # React frontend
+├── server/   # Express backend
 ```
 
-Server runs on `http://localhost:5000`
+---
 
-### 2. Start the Frontend
+## 🔌 API Endpoints
 
-```bash
+| Method | Endpoint           | Description          |
+| ------ | ------------------ | -------------------- |
+| POST   | /alert             | Create alert         |
+| GET    | /alerts            | Get all alerts       |
+| PATCH  | /alert/:id/resolve | Resolve alert        |
+| POST   | /blood-request     | Create blood request |
+| GET    | /blood-requests    | Get blood requests   |
+
+---
+
+## ⚡ Setup Instructions
+
+### 1. Clone the repo
+
+```
+git clone https://github.com/Aryankumar1008/crisis-response.git
+cd crisis-response
+```
+
+### 2. Install frontend
+
+```
 cd client
 npm install
-npm run dev
+npm run build
 ```
 
-Client runs on `http://localhost:5173`
+### 3. Deploy frontend
 
-## API Endpoints
+```
+firebase deploy
+```
 
-### Incidents
-| Method | Endpoint                      | Description              |
-|--------|-------------------------------|--------------------------|
-| POST   | `/api/incidents`              | Create incident (panic)  |
-| GET    | `/api/incidents`              | List all incidents       |
-| PATCH  | `/api/incidents/:id/status`   | Update incident status   |
+### 4. Deploy backend (Cloud Run)
 
-### Blood
-| Method | Endpoint                      | Description              |
-|--------|-------------------------------|--------------------------|
-| POST   | `/api/blood/request`          | Create blood request     |
-| GET    | `/api/blood/requests`         | List blood requests      |
-| POST   | `/api/blood/donors`           | Register as donor        |
-| GET    | `/api/blood/match/:requestId` | Match donors to request  |
+```
+gcloud run deploy crisis-backend \
+  --source . \
+  --region asia-south1 \
+  --allow-unauthenticated
+```
 
-## Roles
+---
 
-- **Guest** — Can trigger panic, request blood, register as donor
-- **Staff** — Can view dashboard, update incident status, view blood matches
+## 🔄 CI/CD Setup
 
-# crisis-response-system
-Real-time hospitality crisis response system with panic alerts, staff coordination dashboard, and emergency blood donor matching.
+This project uses **GitHub Actions** for automatic deployment.
+
+On every push to `main`:
+
+* Project builds automatically
+* Firebase Hosting is updated
+
+---
+
+## 📊 Monitoring
+
+* Google Cloud Run Metrics & Logs used for backend monitoring
+* Firebase Hosting for frontend delivery
+
+---
+
+## 🧠 Key Concepts Used
+
+* REST API
+* Cloud Deployment
+* CI/CD Pipeline
+* Serverless Architecture
+* Containerization (Docker)
+
+---
+
+## 👨‍💻 Author
+
+**Aryan Kumar**
+GitHub: https://github.com/Aryankumar1008
+
+---
+
+## ⭐ Future Improvements
+
+* Add database (MongoDB / Firestore)
+* Authentication system
+* Real-time notifications (WebSockets)
+* Admin dashboard
+
+---
